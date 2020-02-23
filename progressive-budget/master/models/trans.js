@@ -1,15 +1,10 @@
 const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
-
 
 var userSchema = new mongoose.Schema({
-    name: {
-      first: String,
-      last: { type: String, trim: true }
-    },
-    age: { type: Number, min: 0 }
-  });
-
+    name: { type: String },
+    amount: { type: Number, min: 0 },
+    date: { type: Date, default: Date.now}
+})
 
 const Transaction = mongoose.model("Transaction", userSchema);
 
